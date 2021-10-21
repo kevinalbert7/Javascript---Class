@@ -66,7 +66,7 @@ let porsche = new Car("Porsche", 0)
             this.channel = this.channel + zap
             if(this.channel > 50) {
                 this.channel === 50
-            } else(this.channel < 0) { 
+            } else if(this.channel < 0) { 
                 this.channel === 0
             }
         }
@@ -82,4 +82,16 @@ let porsche = new Car("Porsche", 0)
     }
 
     let tele = new Tv("Samsung", 1, 50)
+        tele.increase(40)
         tele.describe()
+        tele.toLower(70)
+        tele.describe()
+        tele.increase(90)
+        tele.describe()
+        tele.toLower(99)
+        tele.describe()
+        tele.zap()
+        tele.describe()
+        tele.zap()
+        tele.describe()
+    
