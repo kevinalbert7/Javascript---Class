@@ -51,24 +51,24 @@ let porsche = new Car("Porsche", 0)
         increase(increase) {
             this.volume = this.volume + increase
                 if(this.volume >= 100) {
-                    increase === 0
+                    this.volume = 100
                 }
         }
 
         toLower(toLower) {
             this.volume = this.volume - toLower
-            if(this.volume <= 0) {
-                toLower === 0
-            }
+                if(this.volume <= 0) {
+                    this.volume = 0
+                }
         }
 
         zap(zap) {
             this.channel = this.channel + zap
-            if(this.channel > 50) {
-                this.channel === 50
-            } else if(this.channel < 0) { 
-                this.channel === 0
-            }
+                if(this.channel > 50) {
+                    this.channel = 50
+                } else if(this.channel < 0) { 
+                    this.channel = 0
+                }
         }
 
         reset() {
@@ -82,16 +82,5 @@ let porsche = new Car("Porsche", 0)
     }
 
     let tele = new Tv("Samsung", 1, 50)
-        tele.increase(40)
+        tele.zap(52)
         tele.describe()
-        tele.toLower(70)
-        tele.describe()
-        tele.increase(90)
-        tele.describe()
-        tele.toLower(99)
-        tele.describe()
-        tele.zap()
-        tele.describe()
-        tele.zap()
-        tele.describe()
-    
