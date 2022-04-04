@@ -2,85 +2,160 @@ const breaklines = () => {
     console.log("")
 }
 
+// 1 - Batmobile
+
+// - Créer un fichier `car.js`
+// - Dans car.js, créer un class `Car` avec 2 propriétés de base:
+//     - `brand`
+//     - `speed`
+// - Ajouter 3 méthodes à la classe `Car`:
+//     - `accelerate` (accélérer) qui prendra en paramètre un nombre. Cette méthode va ajouter le nombre a la propriété `speed` définie plus haut
+//     - `brake` (freiner) qui prendra en paramètre un nombre. Cette méthode va soustraire le nombre à la propriété `speed` définie plus haut
+//     - `describe` qui va afficher  `xxx running at yyy km/h` avec `brand` a la place de `xxx` et `speed` a la place de `yyy`
+// - Créer une variable `ford` et  lui assigner l'initialisation de la classe avec la brand `ford` et speed `0` et afficher la variable ford dans la console
+// - Exécuter la fonction `accelerate` de ford avec une vitesse de 50 km/h et afficher `ford` dans la console
+// - Exécuter la fonction `brake` de ford avec une vitesse de 25 km/h et afficher `ford` dans la console
+// - Faites la même chose avec une nouvelle voiture
+
 class Car {
     constructor(brand, speed) {
     this.brand = brand
     this.speed = speed
     }
 
-    accelerate(accerlerate) {
-        this.speed = this.speed + accerlerate
+    accelerate(number) {
+        this.speed += number
     }
-
-    brake(brake) {
-        this.speed = this.speed - brake
+    
+    brake(number) {
+        this.speed -= number
     }
-
-    describe() {
-        console.log(`${this.brand} running at ${this.speed} km/h`)
+    
+    describe(string) {
+        console.log(`${this.brand} running at ${this.speed}`)
     }
-
 }
 
-let ford = new Car("Ford", 0)
-    ford.accelerate(50)
-    ford.describe()
+var ford = new Car("Ford", 0)
 
-    ford.brake(25)
-    ford.describe()
+ford.accelerate(50)
+ford.describe()
+ford.brake(25)
+ford.describe()
 
-let porsche = new Car("Porsche", 0)
-    porsche.accelerate(280)
-    porsche.describe()
+var peugeot = new Car("Peugeot", 0)
 
-    porsche.brake(2)
-    porsche.describe()
+peugeot.accelerate(100)
+peugeot.describe()
+peugeot.brake(30)
+peugeot.describe()
 
-    breaklines()
-    breaklines()
-    breaklines()
-    // --------------------------------------2------------------------------------//
+breaklines()
 
-    class Tv {
-        constructor (brand, channel, volume) {
+// 2 - TV
+
+// - Créer une class `TV` avec les propriétés `brand`, `channel`, `volume`. La chaine par défaut sera 1, et le volume par défaut sera 50
+// - Ajouter deux méthodes pour baisser et augmenter le volume. Le volume ne peut pas aller en dessous de 0, et pas au dessus de 100
+// - Ajouter une méthode pour changer de chaine. Notre télé a seulement 50 chaines, si on essaye de changer une chaine au dessus de 50, on restera sur la chaine courante. Pareil pour une chaine en dessous de 0
+// - Ajouter une méthode pour reset les paramètres de notre `TV`, qui remettra la chaine et le volume de base
+// - Ajouter une méthode `describe` qui va afficher les infos de notre `TV`
+// - Testez votre classe et ses méthodes avec différentes valeurs
+   
+class TV {
+    constructor(brand, channel, volume) {
         this.brand = brand
         this.channel = 1
         this.volume = 50
-        }
-
-        increase(increase) {
-            this.volume = this.volume + increase
-                if(this.volume >= 100) {
-                    this.volume = 100
-                }
-        }
-
-        toLower(toLower) {
-            this.volume = this.volume - toLower
-                if(this.volume <= 0) {
-                    this.volume = 0
-                }
-        }
-
-        zap(zap) {
-            this.channel = this.channel + zap
-                if(this.channel > 50) {
-                    this.channel = 50
-                } else if(this.channel < 0) { 
-                    this.channel = 0
-                }
-        }
-
-        reset() {
-            this.channel = 1
-            this.volume = 50
-        }
-
-        describe() {
-            console.log(`La télé ${this.brand} est sur la chaîne ${this.channel}, le volume est de ${this.volume}`)
-        }
     }
 
-    let tele = new Tv("Samsung", 1, 50)
-        tele.zap(52)
-        tele.describe()
+    toAugment(number) {
+        this.volume += number
+    }
+
+    toLower(number) {
+        this.volume -= number
+    }
+
+    changeChannel(number) {
+        this.channel === number
+    }
+
+    reset() {
+        this.volume = volume
+        this.channel = channel
+    }
+
+    describe(str) {
+        console.log(`Your TV ${this.brand} is on channel ${this.channel} with volume ${this.volume}`)
+    }
+}
+
+var samsung = new TV("Samsung", this.channel, this.volume)
+
+samsung.toAugment(30)
+samsung.describe()
+samsung.toLower(40)
+samsung.describe()
+samsung.toAugment()
+samsung.describe()
+samsung.toLower(40)
+
+samsung.describe()
+samsung.describe()
+samsung.describe()
+samsung.describe()
+
+
+
+
+
+
+
+
+
+
+
+
+// class Tv {
+    //     constructor (brand, channel, volume) {
+    //     this.brand = brand
+    //     this.channel = 1
+    //     this.volume = 50
+    //     }
+
+    //     increase(increase) {
+    //         this.volume += increase
+    //             if(this.volume >= 100) {
+    //                 this.volume = 100
+    //             }
+    //     }
+
+    //     decrease(volume) {
+    //         this.volume -= volume
+    //             if(this.volume <= 0) {
+    //                 this.volume = 0
+    //             }
+    //     }
+
+    //     toZap(zap) {
+    //         this.channel += zap
+    //             if(this.channel > 50) {
+    //                 this.channel = 50
+    //             } else if(this.channel < 0) { 
+    //                 this.channel = 0
+    //             }
+    //     }
+
+    //     reset() {
+    //         this.channel = 1
+    //         this.volume = 50
+    //     }
+
+    //     describe() {
+    //         console.log(`La télé ${this.brand} est sur la chaîne ${this.channel}, le volume est de ${this.volume}`)
+    //     }
+    // }
+
+    // let tele = new Tv("Samsung", 1, 50)
+    //     tele.zap(52)
+    //     tele.describe()
